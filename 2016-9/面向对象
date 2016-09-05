@@ -1,0 +1,91 @@
+面向过程的开发思想：
+按步骤来。
+比如吃饭
+1.拿筷子
+2.吃饭
+3.放下筷子
+
+一步步地来，有一步改变了，后面都要改变
+一个步骤可以一个函数实现
+
+
+==========================================
+
+面向对象的开发思想：
+
+这里只看到2个对象，一个是筷子，一个是饭
+
+各自调用这2个对象的方法去实现吃饭这个过程
+
+比如筷子对象叫做kuaizi,饭的对象叫做fan
+1.kuaizi->拿起（）
+2.fan->吃（）
+3.筷子->放下()
+
+作为开发者，就站在了一定的高度，审视这些对象，要这些对象干些事。
+就好像老板，打工的人都是对象，老板面向打工的人，也就是面向对象，指挥我们去干事情。
+
+
+划分对象的方法，按功能划分
+
+
+
+
+面向对象有3大特性
+
+封装性：
+利用public,protected,private等修饰符对成员属性和方法进行封装保护。
+
+
+private：
+<?php
+
+class Person{
+    private function say(){
+        echo 'say method';
+    }
+    function run(){
+        echo "run method";
+    }
+
+    function isay(){
+        $this->say();
+    }
+}
+class Boy extends Person{
+    public function go(){
+        $this->say();
+    }
+}
+$mike=new Person();
+//$mike->say();   //error
+$mike->isay();    //ok
+
+$boy=new Boy();
+//$boy->go();      //error
+$boy->isay();    //ok
+
+//sum:private修饰的方法只有在类里面可以访问，在子类和类外面都不可见
+为啥要private呢？
+在一个对象里，有些方法就是为了某一个方法服务的，这些方法单单被外界访问没有意义，就启用private修饰符。
+如下面的，若一个对象直接调用left，让人弄不明白，若对象调用run方法，就知道迈左腿，迈右腿这样。 
+class Person{
+    function run(){
+        $this->left();
+        $this->left();
+        $this->right();
+        $this->right();
+    }
+    private function left(){}
+    private function right(){}
+}
+
+
+另外，对类的成员属性设置private也很有用，假如类的方法是按成员的属性来调用的，属性假如改了，方法就可能会变化。属性基本不让改，把它封装起来
+
+
+?>
+
+
+
+
