@@ -1,0 +1,66 @@
+1 json是什么？有什么用？分类？
+2 json字符串和json对象的区别
+3 json对象和json字符串的转换
+
+
+
+
+1
+
+
+json是什么？
+
+json是一种web和server传送数据的格式。json是ECMA的子集
+
+
+json分类?
+
+json的结构分为2类，json对象和json数组
+
+json对象就是js对象，json数组就是js数组，只不过对json对象的要求比js对象严格一点，对象的key必须是double quota，value是string的话必须用双引号
+
+
+json用处？
+
+一般都用json字符串在client和server之间传输数据
+
+
+
+
+2
+
+json字符串是json对象字符串化后的字符串，如
+var obj='{"a":1}‘;
+
+
+
+json对象（或json数组）是js对象（js数组）类似，只不过对json对象的要求比js对象严格一点，对象的key必须是double quota。
+
+var obj={"a":1}
+
+
+3
+
+a  json对象转json字符串？
+
+JSON.stringify(obj)
+
+
+例子
+
+    var obj={"a":1,"b":2};
+    console.log(obj);    //Object {a: 1, b: 2}
+
+    var m=JSON.stringify(obj);
+    console.log(m);    //{"a":1,"b":2}
+
+
+b  json字符串转json对象？
+
+	jq.parseJSON()
+
+
+
+
+
+
