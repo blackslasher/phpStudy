@@ -1,0 +1,13 @@
+1 http协议
+
+http协议是无状态的，客户端请求，服务端响应，之后他们2个互不认识了。那怎么样才能让他们认识呢？用session实现
+
+2 session是啥
+
+session是一个会话，从用户打开网页到关闭网页这一段过程。
+
+3 session工作原理
+
+a.客户端请求服务端，服务端启动session，创建一个sessionid，通过返回的响应文件，设置本地的一个cookie的sessionid.session对象可以在服务端保存数据
+
+b 再次请求这个域的时候，带上了sessionid这个cookie，这样服务器就识别到了是之前访问过的IP，调取session对象中的数据，从而实现状态的持续性。
